@@ -1,0 +1,38 @@
+<div class="phoneNo">
+    <div class="countryCode" tabindex="0">
+        <button type="button" class="form-control form-select" (click)="openiSOList()">
+            <ng-container *ngIf="selectedCountry; else loadingTpl">
+                <img [src]="selectedCountry.flag" [alt]="selectedCountry.name" class="me-2" />
+                ({{ selectedCountry.dialCode }})
+            </ng-container>
+
+            <ng-template #loadingTpl>
+               loaded..
+            </ng-template>
+
+        </button>
+        <ul class="countryList" [ngClass]="countriesOpen === true ? 'd-block' : 'd-none'">
+            <li>
+                <input type="text"  (keydown)="
+  !(
+    ($event.key >= 'A' && $event.key <= 'Z') ||
+    ($event.key >= 'a' && $event.key <= 'z') ||
+    $event.key === ' '
+  )
+    ? $event.preventDefault()
+    : null
+" class="form-control" [(ngModel)]="searchText" placeholder="Search" (keyup)="searchValue($event)" name="" id="">
+            </li>
+            <li *ngFor="let country of filtedCountry; let i = index" (click)="selectCountry(country)">
+                <img [src]="country.flag" alt="{{country.name}}" class="me-2">
+                {{country.name}} ({{country.dialCode}})
+            </li>
+        </ul>
+    </div>
+    <input type="text" class="form-control " name="" (keyup)="updateNumber($event)" [value]="displayNumber"
+        placeholder="Enter Phone No." id="">
+</div>
+
+<div class="errorMsg" *ngIf="displayNumber && controlName.errors?.['invalidPhone']">
+    Please enter a valid Phone Number.
+</div>

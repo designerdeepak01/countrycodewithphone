@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+.form-control{background-color: #cccc; line-height: normal; border-radius: .5rem; min-height: 3rem; border: 0;}
+.form-control::placeholder{color: #000; }
+.passwordInp::placeholder {
+  transform: translateY(.25rem);
+}

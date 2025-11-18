@@ -1,0 +1,17 @@
+.phoneNo{display: flex; align-items: center; gap: 1rem;}
+.phoneNo .countryCode{width: 10rem; position: relative;}
+.phoneNo .countryCode .form-control.form-select{width: 100%; display: flex; align-items: center; gap: .25rem; font-size: 1rem !important;}
+.phoneNo .countryCode ul{ position: absolute; box-shadow:0px 5px 1rem #00000052; top: 100%; left: 0; min-width: 15rem; max-width: 20rem; max-height: 25rem; overflow: auto; background: #fff; z-index: 1; list-style: none; margin: 0; padding: 0;}
+.phoneNo .countryCode ul li{display: flex; align-items: center; padding: .75rem; cursor: pointer;}
+
+.phoneNo .countryCode ul li:not(:first-child):hover {
+  background: #f1f1f1;
+}
+.phoneNo .countryCode ul li img, .phoneNo .countryCode button img{ width: 2rem; height: 1.25rem;}
+/* .phoneNo .countryCode:focus-within ul,
+.phoneNo .countryCode:active:hover ul {
+  display: block !important;
+} */
+
+.d-block{display: block;}
+.d-none{display: none;}
